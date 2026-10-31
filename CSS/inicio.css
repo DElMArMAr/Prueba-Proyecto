@@ -1,0 +1,277 @@
+/* =========================================================
+    1. HEADER
+   ========================================================= */
+.header {
+    background-color: var(--color-blanco);
+    border-bottom: 1px solid var(--color-gris-borde);
+}
+
+.header_container {
+    padding: var(--espaciado-sm) var(--espaciado-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--espaciado-md);
+}
+
+.header_logo img {
+    width: 220px;
+}
+
+.header_nav {
+    margin-left: auto;
+}
+
+.nav_list {
+    list-style: none;
+    display: flex;
+    gap: 22px;
+}
+
+.nav_link {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: opacity 0.3s ease;
+}
+
+.nav_link:hover {
+    opacity: 0.4;
+}
+
+.header_search {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-negro);
+}
+
+/* =========================================================
+    2. HERO
+   ========================================================= */
+.hero_img {
+    width: 100%;
+    height: 365px;
+    object-fit: cover;
+}
+
+/* =========================================================
+    3. EXPOSICIONES
+   ========================================================= */
+.exposiciones {
+    padding: var(--espaciado-xl) 0 var(--espaciado-lg);
+}
+
+/* Título dentro de una caja con sombra negra desplazada */
+.exposiciones_titulo {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 3px solid var(--color-negro);
+    box-shadow: 5px 5px 0 var(--color-negro);
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.exposiciones_grid {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espaciado-md);
+}
+
+.tarjeta {
+    height: 400px;
+    background-color: var(--color-gris-tarjeta);
+    border: 3px solid var(--color-negro);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.exposiciones_ver-mas {
+    margin-top: var(--espaciado-md);
+    display: flex;
+    justify-content: flex-end;
+}
+
+.divisor {
+    margin-top: var(--espaciado-md);
+    border: none;
+    border-top: 4px solid var(--color-negro);
+}
+
+/* =========================================================
+    4. BLOQUES (Educación, Convocatorias, Sobre el MADC)
+    Los 3 usan la misma estructura: caja gris + imagen + texto
+   ========================================================= */
+.bloque {
+    padding: 0;
+}
+
+.bloque .contenedor {
+    max-width: none;
+    padding: 0;
+}
+
+.bloque_caja {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espaciado-lg);
+    padding: var(--espaciado-lg) ;
+    background-color: var(--color-blanco);
+}
+
+.bloque_caja2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espaciado-lg);
+    padding: var(--espaciado-lg) ;
+    background-color: var(--color-gris-caja);
+}
+
+.bloque_imagen {
+    min-height: 235px;
+    background-color: var(--color-gris-imagen);
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.bloque_imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bloque_imagen--alta {
+    min-height: 370px;
+}
+
+.bloque_contenido {
+    display: flex;
+    flex-direction: column;
+}
+
+.bloque_titulo {
+    align-self: flex-start;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--color-negro);
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.bloque_texto {
+    margin-top: var(--espaciado-md);
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.bloque_botones {
+    margin-top: auto;
+    padding-top: var(--espaciado-lg);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--espaciado-md);
+}
+
+/* Variante: imagen a la derecha (el HTML ya trae el texto primero) */
+.bloque_caja--invertida .bloque_titulo {
+    margin-bottom: var(--espaciado-md);
+}
+
+
+/* =========================================================
+    5. RESPONSIVE (de pantallas grandes a pequeñas)
+   ========================================================= */
+@media (max-width: 1024px) {
+    .header_container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header_nav {
+        margin-left: 0;
+    }
+
+    .nav_list {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .exposiciones_titulo {
+        font-size: 26px;
+        letter-spacing: 5px;
+    }
+
+    .exposiciones_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjeta {
+        height: 300px;
+    }
+
+    .bloque_caja {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .bloque_caja2 {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--espaciado-md);
+        padding: var(--espaciado-md);
+    }
+
+    .bloque_caja2 .bloque_imagen {
+        min-height: 200px;
+        aspect-ratio: 16 / 9;
+    }
+
+    .bloque_caja2 .bloque_contenido {
+        min-width: 0;
+    }
+
+    .bloque_caja2 .bloque_titulo {
+        font-size: 32px;
+    }
+
+    .bloque_caja2 .bloque_texto {
+        font-size: 16px;
+    }
+
+    .bloque_caja2 .bloque_botones .btn {
+        flex: 1 1 140px;
+    }
+
+    .bloque_caja--invertida .bloque_imagen {
+        order: -1;
+    }
+
+    .hero_img {
+        height: 220px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor {
+        padding: 0 var(--espaciado-md);
+    }
+
+    .bloque_caja2 {
+        padding: var(--espaciado-md) var(--espaciado-sm);
+    }
+
+    .header_logo img {
+        width: 170px;
+    }
+
+    .btn--grande {
+        font-size: 24px;
+    }
+}
