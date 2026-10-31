@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="/CSS/base.css">
     <link rel="stylesheet" href="/CSS/styles.css">
 </head>
+
 <body>
     <!-- ========== HEADER ========== -->
     <header class="header">
@@ -33,7 +35,8 @@
             </nav>
 
             <button class="header_search" aria-label="Buscar">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2"
+                    stroke-linecap="round">
                     <circle cx="10.5" cy="10.5" r="6.5"></circle>
                     <line x1="15.5" y1="15.5" x2="21" y2="21"></line>
                 </svg>
@@ -43,15 +46,156 @@
 
 
     <!-- CONTENIDO -->
+    <main id="contenido">
+        <section class="hero">
+            <div class="wrap">
+                <div class="hero-top">
+                    <div class="titulo">
+                        <h1>EDUCACIÓN</h1>
+                    </div>
+                    <p class="intro">Talleres, visitas, conferencias y recursos digitales para acercarse al arte y al
+                        diseño contemporáneos, desde la primera infancia hasta las personas adultas mayores y con
+                        distintas capacidades visuales, motoras y cognitivas.</p>
+                </div>
+                <ul class="tira">
+                    <li><a href="#talleres"><span class="img"><img src="img/talleres.jpg" alt="" width="606"
+                                    height="401" decoding="async"></span><span class="n">Talleres</span></a></li>
+                    <li><a href="#visitas-taller"><span class="img"><img src="img/visitas-taller.jpg" alt="" width="605"
+                                    height="401" decoding="async"></span><span class="n">Visitas
+                                guiadas-taller</span></a></li>
+                    <li><a href="#conferencias"><span class="img"><img src="img/conferencias.jpg" alt="" width="604"
+                                    height="401" decoding="async"></span><span class="n">Conferencias y
+                                conversatorios</span></a></li>
+                    <li><a href="#visitas"><span class="img"><img src="img/visitas.jpg" alt="" width="606" height="399"
+                                    decoding="async"></span><span class="n">Visitas guiadas</span></a></li>
+                    <li><a href="#recursos"><span class="img"><img src="img/recursos.jpg" alt="" width="605"
+                                    height="425" decoding="async"></span><span class="n">Recursos digitales</span></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="prog gris" id="talleres">
+            <div class="wrap">
+                <div class="txt">
+                    <h2>Talleres</h2>
+                    <p>Actividades complementarias a las exposiciones, facilitadas por el personal del Museo, artistas o
+                        personas invitadas de distintas disciplinas.</p>
+                    <dl class="dato">
+                        <dt>Dirigido a</dt>
+                        <dd>Primera infancia, infancia, adolescentes, jóvenes, adultos y adultos mayores, e inclusivo
+                            para distintas capacidades visuales, motoras y cognitivas.</dd>
+                        <dt>Solicitudes</dt>
+                        <dd><a href="mailto:mediacion@madc.cr">mediacion@madc.cr</a> · <a
+                                href="tel:+50622223489">2222-3489</a> ext. 282</dd>
+                    </dl>
+                </div>
+                <div class="fig"><img src="img/talleres.jpg"
+                        alt="Una niña pinta sobre un mural de papel durante un taller en el museo" width="606"
+                        height="401" loading="lazy" decoding="async"></div>
+            </div>
+        </section>
+
+        <section class="prog inv" id="visitas-taller">
+            <div class="wrap">
+                <div class="txt">
+                    <h2>Visitas guiadas-taller</h2>
+                    <p>Recorridos guiados donde realizamos dinámicas en relación con los contenidos temáticos o técnicos
+                        de las exposiciones o temas de interés sobre arte contemporáneo, diseño y ejes transversales
+                        como medioambiente, género u otros.</p>
+                    <dl class="dato">
+                        <dt>Dirigido a</dt>
+                        <dd>Estudiantes de preescolar y de Educación General Básica I, II, III y IV ciclo, docentes y
+                            adulto mayor.</dd>
+                        <dt>Solicitudes</dt>
+                        <dd><a href="mailto:mediacion@madc.cr">mediacion@madc.cr</a> · <a
+                                href="tel:+50622223489">2222-3489</a> ext. 282</dd>
+                    </dl>
+                </div>
+                <div class="fig"><img src="img/visitas-taller.jpg"
+                        alt="Estudiantes sentados en el suelo de una sala, con una guía de pie frente a ellos"
+                        width="605" height="401" loading="lazy" decoding="async"></div>
+            </div>
+        </section>
+
+        <section class="prog gris" id="conferencias">
+            <div class="wrap">
+                <div class="txt">
+                    <h2>Conferencias y conversatorios</h2>
+                    <span class="libre">Entrada gratuita</span>
+                    <p>Encuentros de reflexión y discusión acerca de las principales exposiciones del museo y diversos
+                        textos teóricos, desde distintas posiciones críticas y perspectivas profesionales.</p>
+                    <p>Se realizan en distintas épocas del año.</p>
+                </div>
+                <div class="fig"><img src="img/conferencias.jpg"
+                        alt="Público sentado en una sala escuchando una conferencia" width="604" height="401"
+                        loading="lazy" decoding="async"></div>
+            </div>
+        </section>
+
+        <section class="prog inv" id="visitas">
+            <div class="wrap">
+                <div class="txt">
+                    <h2>Visitas guiadas</h2>
+                    <p>Recorridos que ofrecen información completa sobre las exposiciones del museo, sus espacios e
+                        historia. Igualmente, se facilita a los participantes la consulta de información complementaria
+                        a la muestra y catálogos del museo.</p>
+                    <dl class="dato">
+                        <dt>Dirigido a</dt>
+                        <dd>Primera infancia, infancia, adolescentes, jóvenes, adultos y adultos mayores, e inclusivo
+                            para distintas capacidades visuales, motoras y cognitivas.</dd>
+                        <dt>Solicitudes</dt>
+                        <dd><a href="mailto:mediacion@madc.cr">mediacion@madc.cr</a> · <a
+                                href="tel:+50622223489">2222-3489</a> ext. 282</dd>
+                    </dl>
+                </div>
+                <div class="fig"><img src="img/visitas.jpg"
+                        alt="Una mediadora guía a un grupo por una sala de exposición" width="606" height="399"
+                        loading="lazy" decoding="async"></div>
+            </div>
+        </section>
+
+        <section class="prog gris" id="recursos">
+            <div class="wrap">
+                <div class="txt">
+                    <h2>Recursos digitales</h2>
+                    <p>El MADC ofrece una serie de recursos digitales para diferentes tipos de público. Los materiales
+                        pretenden promover la mediación y la interacción con el arte y el diseño contemporáneos, por
+                        medio de distintas actividades descargables.</p>
+                    <dl class="dato">
+                        <dt>También en</dt>
+                        <dd><a href="#">YouTube</a>, <a href="#">Facebook</a> e <a href="#">Instagram</a>, con otros
+                            contenidos multimedia.</dd>
+                    </dl>
+                </div>
+                <div class="fig"><img src="img/recursos.jpg"
+                        alt="Un cursor de computadora ampliado hasta ver sus píxeles de colores" width="605"
+                        height="425" loading="lazy" decoding="async"></div>
+            </div>
+        </section>
+
+        <section class="banner" aria-labelledby="solicitar">
+            <div class="wrap">
+                <div>
+                    <h2 id="solicitar">Reserve su visita o taller</h2>
+                    <p>El Departamento de Mediación Educativa le responde por correo o por teléfono, 2222-3489 ext. 282.
+                    </p>
+                </div>
+                <a class="btn" href="mailto:mediacion@madc.cr">Escribir a Mediación Educativa</a>
+            </div>
+        </section>
+    </main>
 
 
     <!-- ========== LOGOS ========== -->
     <section class="logos-section">
         <div class="logos">
-            <img src="/Media/base/logoMinisterio.png" alt="Esencial Costa Rica · Ministerio de Cultura y Juventud, Gobierno de Costa Rica · Museo de Arte y Diseño Contemporáneo" width="640" height="93">
+            <img src="/Media/base/logoMinisterio.png"
+                alt="Esencial Costa Rica · Ministerio de Cultura y Juventud, Gobierno de Costa Rica · Museo de Arte y Diseño Contemporáneo"
+                width="640" height="93">
         </div>
     </section>
-    
+
 
     <!-- ========== FOOTER ========== -->
     <footer class="footer">
@@ -61,7 +205,7 @@
             <div class="footer_col footer_col--contacto">
                 <div class="footer_logo">
                     <a href="/index.html">
-                        <img src="/Media/base/logoMADC-Negro.png" alt="Logo MADC" >
+                        <img src="/Media/base/logoMADC-Negro.png" alt="Logo MADC">
                     </a>
                 </div>
 
@@ -75,11 +219,41 @@
                     <div class="footer_redes">
                         <h3 class="footer_subtitulo">Nuestras Redes</h3>
                         <ul class="redes">
-                            <li><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="12" fill="#1877F2"/><path fill="#fff" d="M16.671 15.543l.532-3.47h-3.329v-2.25c0-.949.465-1.874 1.956-1.874h1.513V4.996s-1.374-.235-2.686-.235c-2.741 0-4.533 1.662-4.533 4.669v2.643H7.078v3.47h3.047V24a12.1 12.1 0 0 0 3.749 0v-8.457h2.797z"/></svg></a></li>
-                            <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><radialGradient id="ig-grad" cx=".3" cy="1.07" r="1.4"><stop offset="0" stop-color="#fdf497"/><stop offset=".05" stop-color="#fdf497"/><stop offset=".45" stop-color="#fd5949"/><stop offset=".6" stop-color="#d6249f"/><stop offset=".9" stop-color="#285aeb"/></radialGradient></defs><rect width="24" height="24" rx="6.5" fill="url(#ig-grad)"/><rect x="5.2" y="5.2" width="13.6" height="13.6" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="16.4" cy="7.6" r="1" fill="#fff"/></svg></a></li>
-                            <li><a href="#" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6.5" fill="#000"/><path fill="#fff" transform="translate(5.04 5.04) scale(.58)" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg></a></li>
-                            <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="4.5" fill="#0a66c2"/><path fill="#fff" transform="translate(4.56 4.56) scale(.62)" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg></a></li>
-                            <li><a href="#" aria-label="YouTube"><svg class="yt" viewBox="0 0 24 24" aria-hidden="true"><rect y="3.5" width="24" height="17" rx="5" fill="#ff0000"/><path fill="#fff" d="M9.8 8.3v7.4l6.4-3.7z"/></svg></a></li>
+                            <li><a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <circle cx="12" cy="12" r="12" fill="#1877F2" />
+                                        <path fill="#fff"
+                                            d="M16.671 15.543l.532-3.47h-3.329v-2.25c0-.949.465-1.874 1.956-1.874h1.513V4.996s-1.374-.235-2.686-.235c-2.741 0-4.533 1.662-4.533 4.669v2.643H7.078v3.47h3.047V24a12.1 12.1 0 0 0 3.749 0v-8.457h2.797z" />
+                                    </svg></a></li>
+                            <li><a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <defs>
+                                            <radialGradient id="ig-grad" cx=".3" cy="1.07" r="1.4">
+                                                <stop offset="0" stop-color="#fdf497" />
+                                                <stop offset=".05" stop-color="#fdf497" />
+                                                <stop offset=".45" stop-color="#fd5949" />
+                                                <stop offset=".6" stop-color="#d6249f" />
+                                                <stop offset=".9" stop-color="#285aeb" />
+                                            </radialGradient>
+                                        </defs>
+                                        <rect width="24" height="24" rx="6.5" fill="url(#ig-grad)" />
+                                        <rect x="5.2" y="5.2" width="13.6" height="13.6" rx="4" fill="none"
+                                            stroke="#fff" stroke-width="1.8" />
+                                        <circle cx="12" cy="12" r="3.2" fill="none" stroke="#fff" stroke-width="1.8" />
+                                        <circle cx="16.4" cy="7.6" r="1" fill="#fff" />
+                                    </svg></a></li>
+                            <li><a href="#" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect width="24" height="24" rx="6.5" fill="#000" />
+                                        <path fill="#fff" transform="translate(5.04 5.04) scale(.58)"
+                                            d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" />
+                                    </svg></a></li>
+                            <li><a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect width="24" height="24" rx="4.5" fill="#0a66c2" />
+                                        <path fill="#fff" transform="translate(4.56 4.56) scale(.62)"
+                                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452z" />
+                                    </svg></a></li>
+                            <li><a href="#" aria-label="YouTube"><svg class="yt" viewBox="0 0 24 24" aria-hidden="true">
+                                        <rect y="3.5" width="24" height="17" rx="5" fill="#ff0000" />
+                                        <path fill="#fff" d="M9.8 8.3v7.4l6.4-3.7z" />
+                                    </svg></a></li>
                         </ul>
                     </div>
                 </div>
@@ -92,7 +266,8 @@
                 <h3 class="footer_titulo">Sobre el MADC</h3>
                 <p class="footer_direccion">Avenida 3, Calle 15</p>
                 <div class="footer_mapa">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.9817005524765!2d-84.07442922411435!3d9.935480290166623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e363abe3ec11%3A0xcb901e003b84b2c4!2sMuseo%20de%20Arte%20y%20Dise%C3%B1o%20Contempor%C3%A1neo!5e0!3m2!1ses-419!2scr!4v1792448915081!5m2!1ses-419!2scr" ></iframe>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.9817005524765!2d-84.07442922411435!3d9.935480290166623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e363abe3ec11%3A0xcb901e003b84b2c4!2sMuseo%20de%20Arte%20y%20Dise%C3%B1o%20Contempor%C3%A1neo!5e0!3m2!1ses-419!2scr!4v1792448915081!5m2!1ses-419!2scr"></iframe>
                 </div>
             </div>
 
@@ -109,7 +284,8 @@
                     <p>Suscríbase al boletín curatorial<br>y noticias de exposiciones.</p>
 
                     <form class="boletin_form">
-                        <input type="email" class="boletin_input" placeholder="correo@ejemplo.com" aria-label="Correo electrónico">
+                        <input type="email" class="boletin_input" placeholder="correo@ejemplo.com"
+                            aria-label="Correo electrónico">
                         <button type="submit" class="btn btn--blanco btn--ancho">SUSCRIBIR</button>
                     </form>
                 </div>
@@ -118,4 +294,5 @@
         </div>
     </footer>
 </body>
+
 </html>
