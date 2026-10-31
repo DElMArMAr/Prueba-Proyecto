@@ -1,0 +1,359 @@
+/* ==========================================================
+   VISITANOS — estilos de la página "Visitas"
+   ----------------------------------------------------------
+   Este archivo tiene SOLO los estilos de esta página.
+   Lo que comparte todo el sitio (colores, header, footer,
+   botones) está en base.css, que se carga antes que este.
+
+   Las variables como var(--color-negro) o var(--espaciado-lg)
+   también están definidas en base.css:
+       --espaciado-sm = 10px      --espaciado-md = 20px
+       --espaciado-lg = 40px      --espaciado-xl = 80px
+   Si cambias una variable allá, cambia en todo el sitio.
+
+   ÍNDICE
+     0. Menú: marcar la página actual
+     1. Sección general
+     2. Título en caja ("VISITAS")
+     3. Intro: imagen + texto
+     4. Títulos subrayados y línea divisoria
+     5. Tipos de visita (tarjetas que se abren)
+     6. Responsive (tablet y celular)
+     7. Accesibilidad: menos animación
+   ========================================================== */
+
+
+/* ==========================================================
+   0. MENÚ: MARCAR LA PÁGINA ACTUAL
+   ----------------------------------------------------------
+   En el HTML, el link "Visitanos" tiene aria-current="page".
+   Los corchetes [ ] seleccionan elementos por un atributo,
+   así que esta regla aplica SOLO a ese link: lo subrayamos
+   para que el usuario sepa en qué página está.
+   ========================================================== */
+   .nav_link[aria-current="page"] {
+    padding-bottom: 3px;                         /* separa la línea del texto */
+    border-bottom: 2px solid var(--color-negro);
+}
+
+
+/* ==========================================================
+   1. SECCIÓN GENERAL
+   ========================================================== */
+.visita {
+    padding-top: var(--espaciado-xl);            /* espacio entre el header y el título */
+}
+
+
+/* ==========================================================
+   2. TÍTULO EN CAJA ("VISITAS")
+   ----------------------------------------------------------
+   Es el mismo estilo que .exposiciones_titulo de inicio.css.
+   Si otras páginas lo van a usar, conviene moverlo a base.css.
+   ========================================================== */
+.titulo-caja {
+    /* inline-block hace que la caja mida lo que mide el texto.
+       Con block (lo normal en un h1) ocuparía todo el ancho. */
+    display: inline-block;
+    padding: 12px 30px;                          /* arriba/abajo  izquierda/derecha */
+    border: 3px solid var(--color-negro);
+
+    /* box-shadow: x  y  difuminado  color
+       Con difuminado 0 la sombra es sólida y parece
+       una segunda caja negra detrás. */
+    box-shadow: 5px 5px 0 var(--color-negro);
+
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 10px;                        /* espacio entre letras */
+    text-transform: uppercase;                   /* en el HTML se escribe "Visitas" normal */
+}
+
+
+/* ==========================================================
+   3. INTRO: IMAGEN A LA IZQUIERDA, TEXTO A LA DERECHA
+   ----------------------------------------------------------
+   Usamos GRID para hacer dos columnas.
+   "fr" significa "fracción del espacio libre":
+   1.3fr 1fr = la imagen recibe un poco más que el texto.
+   ========================================================== */
+.visita_intro {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: var(--espaciado-lg);                    /* espacio entre las dos columnas */
+    margin-top: 60px;                            /* separa la intro del título */
+}
+
+.visita_imagen {
+    min-height: 400px;                           /* alto mínimo de la caja de la imagen */
+    background-color: var(--color-gris-imagen);  /* se ve gris si la imagen no carga */
+    border: 1px solid var(--color-gris-borde);
+    border-radius: 4px;
+    overflow: hidden;                            /* recorta la imagen en las esquinas redondeadas */
+}
+
+.visita_imagen img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover llena toda la caja SIN deformar la foto.
+       Si la proporción no coincide, recorta los bordes. */
+    object-fit: cover;
+}
+
+.visita_texto {
+    margin-top: var(--espaciado-md);             /* espacio bajo "Descubre el arte" */
+    font-size: 18px;
+    line-height: 1.4;                            /* interlineado: más fácil de leer */
+}
+
+
+/* ==========================================================
+   4. TÍTULOS SUBRAYADOS Y LÍNEA DIVISORIA
+   ========================================================== */
+
+/* Se usa en "Descubre el arte" y "Tipos de visita".
+   Usamos border-bottom en vez de text-decoration: underline
+   porque así controlamos el grosor y la distancia de la línea.
+   inline-block hace que la línea mida lo mismo que el texto. */
+.visita_titulo {
+    display: inline-block;
+    padding-bottom: 4px;
+    border-bottom: 3px solid var(--color-negro);
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+/* Línea negra gruesa (<hr>). Igual que .divisor de inicio.css.
+   El <hr> trae un borde gris por defecto del navegador:
+   primero lo quitamos (border: none) y después ponemos el nuestro. */
+.divisor {
+    margin: 60px 0;                              /* 60px arriba y abajo, 0 a los lados */
+    border: none;
+    border-top: 4px solid var(--color-negro);
+}
+
+
+/* ==========================================================
+   5. TIPOS DE VISITA (TARJETAS QUE SE ABREN)
+   ----------------------------------------------------------
+   Estructura del HTML de cada tarjeta:
+
+     <details class="tipo">             ← la tarjeta completa
+       <summary class="tipo_cabecera">  ← la fila visible (se hace clic aquí)
+         <span class="tipo_etiqueta">   ← "Para Estudiantes"
+         <span class="tipo_resumen">    ← texto corto
+         <span class="tipo_icono">      ← el "+"
+       </summary>
+       <div class="tipo_detalle">       ← solo se ve cuando está abierta
+     </details>
+
+   <details> se abre y se cierra solo, SIN JavaScript.
+   Cuando está abierto, el navegador le agrega el atributo
+   "open", y con .tipo[open] le damos estilos distintos.
+   ========================================================== */
+
+/* Contenedor de las 3 tarjetas: una debajo de otra, con espacio */
+.tipos {
+    display: flex;
+    flex-direction: column;                      /* en columna (vertical) */
+    gap: var(--espaciado-lg);                    /* espacio entre tarjetas */
+    margin-top: var(--espaciado-lg);
+}
+
+/* La tarjeta (el borde negro redondeado) */
+.tipo {
+    border: 2px solid var(--color-negro);
+    border-radius: 8px;
+    background-color: var(--color-blanco);
+}
+
+/* La fila visible: [ etiqueta ] [ texto ] [ + ]
+   Grid con 3 columnas:
+     230px → la etiqueta tiene ancho fijo, así las 3 tarjetas
+             quedan alineadas aunque el texto sea distinto
+     1fr   → el texto usa todo el espacio que sobra
+     32px  → espacio para el "+" */
+.tipo_cabecera {
+    display: grid;
+    grid-template-columns: 230px 1fr 32px;
+    align-items: center;                         /* centra todo verticalmente */
+    gap: var(--espaciado-lg);
+    padding: 28px 32px;
+    cursor: pointer;                             /* manito al pasar el mouse */
+    list-style: none;                            /* quita el triángulo ▶ que trae <summary> */
+}
+
+/* Safari muestra el triángulo de otra forma; esto lo oculta ahí también */
+.tipo_cabecera::-webkit-details-marker {
+    display: none;
+}
+
+/* Contorno cuando se navega con el teclado (tecla Tab).
+   :focus-visible NO aparece al hacer clic con el mouse,
+   solo con teclado. Es importante para la accesibilidad. */
+.tipo_cabecera:focus-visible {
+    outline: 3px solid var(--color-negro);
+    outline-offset: 4px;                         /* separa el contorno del borde */
+    border-radius: 6px;
+}
+
+/* La etiqueta con borde ("Para Estudiantes", etc.) */
+.tipo_etiqueta {
+    padding: 10px 12px;
+    border: 2px solid var(--color-negro);
+    border-radius: 0px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    /* transition anima el cambio de color en 0.3 segundos
+       en vez de cambiar de golpe */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Etiqueta negra con letra blanca cuando:
+     - el mouse está encima de la fila (:hover), o
+     - la tarjeta está abierta ([open])
+   La coma significa "esta regla aplica a los dos casos". */
+.tipo_cabecera:hover .tipo_etiqueta,
+.tipo[open] .tipo_etiqueta {
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+}
+
+.tipo_resumen {
+    font-size: 16px;
+    line-height: 1.35;
+}
+
+/* El ícono "+"
+   En el HTML el <span> está vacío. El "+" lo escribe el CSS
+   con ::before y content. Al abrir la tarjeta lo giramos 45°,
+   y un "+" girado 45° se ve como una "×" (cerrar). */
+.tipo_icono {
+    justify-self: end;                           /* lo pega al borde derecho de su columna */
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1;
+    transition: transform 0.3s ease;             /* el giro se anima */
+}
+
+.tipo_icono::before {
+    content: "+";
+}
+
+.tipo[open] .tipo_icono {
+    transform: rotate(45deg);
+}
+
+/* El texto extra que aparece al abrir la tarjeta */
+.tipo_detalle {
+    margin: 0 32px;                              /* mismo margen lateral que la cabecera */
+    padding: var(--espaciado-md) 0 28px;         /* arriba  lados  abajo */
+    border-top: 1px solid var(--color-gris-borde); /* línea fina que separa del resumen */
+}
+
+.tipo_detalle p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+
+/* ==========================================================
+   6. RESPONSIVE (TABLET Y CELULAR)
+   ----------------------------------------------------------
+   Todo lo de arriba es para pantallas grandes.
+   Las @media de abajo solo cambian lo necesario cuando la
+   pantalla es más angosta. Lo que no se repite aquí se
+   queda igual que arriba.
+   ========================================================== */
+
+/* ---------- Tablet: 1024px o menos ---------- */
+@media (max-width: 1024px) {
+
+    /* Imagen y texto pasan a medir lo mismo */
+    .visita_intro {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Etiqueta y "+" un poco más angostos, menos espacio entre columnas */
+    .tipo_cabecera {
+        grid-template-columns: 200px 1fr 24px;
+        gap: var(--espaciado-md);
+    }
+}
+
+/* ---------- Celular: 768px o menos ---------- */
+@media (max-width: 768px) {
+
+    .visita {
+        padding-top: var(--espaciado-lg);
+    }
+
+    /* Título más pequeño para que quepa en la pantalla */
+    .titulo-caja {
+        font-size: 26px;
+        letter-spacing: 5px;
+    }
+
+    /* Una sola columna: la imagen arriba y el texto abajo
+       (en el HTML la imagen ya va primero) */
+    .visita_intro {
+        grid-template-columns: 1fr;
+        margin-top: var(--espaciado-lg);
+    }
+
+    .visita_imagen {
+        min-height: 240px;
+    }
+
+    .visita_titulo {
+        font-size: 28px;
+    }
+
+    .divisor {
+        margin: var(--espaciado-lg) 0;
+    }
+
+    /* En el celular no caben 3 columnas, así que reacomodamos la
+       fila con grid-template-areas. Es como dibujar un mapa:
+       cada palabra entre comillas es una fila, y cada nombre
+       ocupa una celda.
+
+         fila 1:  [ etiqueta ] [ icono ]
+         fila 2:  [ resumen  ocupa las dos columnas ]   */
+    .tipo_cabecera {
+        grid-template-columns: auto 24px;
+        grid-template-areas:
+            "etiqueta icono"
+            "resumen  resumen";
+        justify-content: space-between;          /* etiqueta a la izquierda, "+" a la derecha */
+        padding: var(--espaciado-md);
+    }
+
+    /* Aquí le decimos a cada elemento en qué parte del "mapa" va */
+    .tipo_etiqueta { grid-area: etiqueta; }
+    .tipo_resumen  { grid-area: resumen; }
+    .tipo_icono    { grid-area: icono; }
+
+    .tipo_detalle {
+        margin: 0 var(--espaciado-md);
+        padding-bottom: var(--espaciado-md);
+    }
+}
+
+
+/* ==========================================================
+   7. ACCESIBILIDAD: MENOS ANIMACIÓN
+   ----------------------------------------------------------
+   Algunas personas activan "reducir movimiento" en su
+   computadora o celular (por ejemplo, porque las animaciones
+   les causan mareo). Esta regla detecta esa opción y quita
+   las animaciones de esta página.
+   ========================================================== */
+@media (prefers-reduced-motion: reduce) {
+    .tipo_icono,
+    .tipo_etiqueta {
+        transition: none;
+    }
+}
